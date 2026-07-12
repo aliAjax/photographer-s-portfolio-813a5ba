@@ -1,10 +1,7 @@
 import { defineConfig } from '@playwright/test'
 import path from 'node:path'
 
-// This suite runs against a locally pulled-back SOTA submission (../sota-submission),
-// NOT against the annotator-only reference-solution. Run from within tests/:
-//   npm install && npm test
-const SUBMISSION_DIR = path.resolve(process.cwd(), '..', 'sota-submission')
+const PROJECT_ROOT = path.resolve(process.cwd(), '..')
 const PORT = 5173
 const BASE_URL = `http://127.0.0.1:${PORT}`
 
@@ -22,7 +19,7 @@ export default defineConfig({
   },
   webServer: {
     command: `npm run dev -- --port ${PORT} --host 127.0.0.1`,
-    cwd: SUBMISSION_DIR,
+    cwd: PROJECT_ROOT,
     url: BASE_URL,
     reuseExistingServer: true,
     timeout: 60_000,
