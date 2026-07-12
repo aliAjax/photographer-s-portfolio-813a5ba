@@ -11,5 +11,4 @@ playwright-report/
 !.env.example
 .idea/
 .vscode/
-trajectory.jsonl
 trajectory.md.jsonl

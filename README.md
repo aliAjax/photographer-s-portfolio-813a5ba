@@ -22,6 +22,7 @@
 Photographer's-Portfolio/
 ├── README.md                     # 项目说明
 ├── task.md                       # 交给 coding agent 的实现需求
+├── trajectory.jsonl              # coding agent 的完整执行轨迹
 ├── metadata.json                 # 任务元数据、难度与技术栈信息
 ├── rubric.json                   # 机器评分规则
 ├── target_states.md              # 验收状态 A-F 的操作与预期
@@ -73,7 +74,7 @@ Photographer's-Portfolio/
 - `starter/`：当前本地存在但为空。Git 不跟踪空目录，因此 GitHub 仓库中不会显示它。若以 `starter/` 作为参评工作区，需要先在其中创建 Vite 项目。
 - `sota-submission/`：`tests/playwright.config.ts` 当前固定以该目录作为被测应用目录，但它没有提交到本仓库。运行验收测试前，需要在仓库根目录下准备一份完整、可执行 `npm run dev` 的实现。
 - `reference-solution/`：本仓库未包含参考答案。
-- `trajectory.jsonl`、`.DS_Store`、依赖目录和测试产物：由根目录 `.gitignore` 排除。
+- `trajectory.md.jsonl`、`.DS_Store`、依赖目录和测试产物：由根目录 `.gitignore` 排除。
 
 ## 核心任务
 
