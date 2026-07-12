@@ -26,6 +26,8 @@ Photographer's-Portfolio/
 ├── metadata.json                 # 任务元数据、难度与技术栈信息
 ├── rubric.json                   # 机器评分规则
 ├── target_states.md              # 验收状态 A-F 的操作与预期
+├── starter/                      # 参评实现工作区，当前仅含占位文件
+│   └── .gitkeep
 ├── assets/                       # 视觉参考和离线字体，不是业务照片
 │   ├── README.md
 │   ├── FONTS.md
@@ -69,9 +71,9 @@ Photographer's-Portfolio/
     └── sota_state_f2.png
 ```
 
-### 未包含在仓库中的工作目录
+### 工作目录说明
 
-- `starter/`：当前本地存在但为空。Git 不跟踪空目录，因此 GitHub 仓库中不会显示它。若以 `starter/` 作为参评工作区，需要先在其中创建 Vite 项目。
+- `starter/`：已通过 `.gitkeep` 纳入仓库，但尚无前端代码。若以它作为参评工作区，需要先在其中创建 Vite 项目；创建项目后可以删除 `.gitkeep`。
 - `sota-submission/`：`tests/playwright.config.ts` 当前固定以该目录作为被测应用目录，但它没有提交到本仓库。运行验收测试前，需要在仓库根目录下准备一份完整、可执行 `npm run dev` 的实现。
 - `reference-solution/`：本仓库未包含参考答案。
 - `trajectory.md.jsonl`、`.DS_Store`、依赖目录和测试产物：由根目录 `.gitignore` 排除。
@@ -102,6 +104,7 @@ Photographer's-Portfolio/
 | 文件或目录 | 建议可见性 | 用途 |
 |---|---|---|
 | `task.md` | agent 可见 | 实现需求 |
+| `starter/` | agent 可见 | 参评实现工作区 |
 | `mock-data/` | agent 可见 | 真实内容数据 |
 | `assets/` | agent 可见 | 视觉参考和本地字体 |
 | `README.md` | agent 可见 | 仓库结构说明 |
@@ -111,13 +114,14 @@ Photographer's-Portfolio/
 | `tests/` | 仅 annotator | 自动化验收脚本 |
 | `screenshots/` | 仅 annotator | 已有验收结果截图 |
 
-建议为参评 agent 准备隔离工作区，只复制 `task.md`、`mock-data/` 和 `assets/`，再在该工作区中创建前端工程。
+建议为参评 agent 准备隔离工作区，只复制 `task.md`、`starter/`、`mock-data/` 和 `assets/`，再在 `starter/` 中创建前端工程。
 
 ## 运行参评实现
 
-仓库本身没有根级 `package.json`，不能直接在根目录执行 `npm install` 或 `npm run dev`。创建或放入参评实现后，在实现目录中运行：
+仓库本身没有根级 `package.json`，`starter/` 当前也只有占位文件，因此不能直接执行 `npm install` 或 `npm run dev`。在 `starter/` 中创建参评实现后运行：
 
 ```bash
+cd starter
 npm install
 npm run dev
 npm run build
