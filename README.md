@@ -71,13 +71,6 @@ Photographer's-Portfolio/
     └── sota_state_f2.png
 ```
 
-### 工作目录说明
-
-- `starter/`：已通过 `.gitkeep` 纳入仓库，但尚无前端代码。若以它作为参评工作区，需要先在其中创建 Vite 项目；创建项目后可以删除 `.gitkeep`。
-- `sota-submission/`：`tests/playwright.config.ts` 当前固定以该目录作为被测应用目录，但它没有提交到本仓库。运行验收测试前，需要在仓库根目录下准备一份完整、可执行 `npm run dev` 的实现。
-- `reference-solution/`：本仓库未包含参考答案。
-- `trajectory.md.jsonl`、`.DS_Store`、依赖目录和测试产物：由根目录 `.gitignore` 排除。
-
 ## 核心任务
 
 参评实现需要完成以下页面和共享能力：
